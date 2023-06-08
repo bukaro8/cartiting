@@ -45,7 +45,7 @@ export default function Home() {
 				<div className=' d-flex row '>
 					<div className='col-md-6 p-0 '>
 						<TextCard
-							contactButton={false}
+							quickButton={false}
 							title={'Services'}
 							text={'Car Wrapping'}
 							text2={'Window Tinting'}
