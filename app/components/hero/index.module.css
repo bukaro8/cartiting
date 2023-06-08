@@ -1,0 +1,21 @@
+@media only screen and (min-width: 767px) {
+	.container {
+		text-align: center;
+		background-color: black;
+
+		background-position: center;
+		display: flex !important;
+		justify-content: center !important;
+		align-items: center !important;
+		width: 100vw !important;
+	}
+	.innerContainer {
+		display: flex !important;
+		justify-content: center !important;
+		align-items: center !important;
+	}
+	.imageBig {
+		/* height: 70%; */
+		width: 65% !important;
+	}
+}

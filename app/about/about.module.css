@@ -1,0 +1,10 @@
+.background {
+	background-image: url('https://www.kwik-fit.com/assets/kwikfit/window_tint_close_up.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+}
+.transparent {
+	background-color: rgba(0, 0, 0, 0.377);
+}
