@@ -16,7 +16,7 @@ export const Layout: FC<Props> = ({ children, title }) => {
 				<meta name='keywords' content={`${title}`} />
 			</Head>
 			<Navbar />
-			<main className='bg-dark' style={{ height: '100vh', padding: '0x 20y' }}>
+			<main className='bg-dark' style={{ padding: '0x 20y' }}>
 				{children}
 			</main>
 		</>

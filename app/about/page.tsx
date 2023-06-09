@@ -9,7 +9,7 @@ const About: FC = () => {
 				className={`d-flex flex-column justify-content-center align-items-center ${style.background}`}
 			>
 				<div
-					className={`container-fluid rounded col-md-6  d-flex flex-column justify-content-center align-items-center ${style.transparent}`}
+					className={`container-fluid rounded col-md-6  d-flex flex-column justify-content-center align-items-center  mb-3 ${style.transparent}`}
 				>
 					<h2 className='h1 bolder text-light'> About Us</h2>
 					<p className=' text-light text-center'>
