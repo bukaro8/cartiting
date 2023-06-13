@@ -1,0 +1,10 @@
+.background {
+	background-image: url('https://ultimatewindowtinting.com/wp-content/uploads/2018/11/Car-Window-Tinting-1.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+}
+.transparent {
+	background-color: rgba(154, 141, 141, 0.377);
+}

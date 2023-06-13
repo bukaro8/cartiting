@@ -1,8 +1,10 @@
 'use client';
 import { ImageCard, TextCard } from './components/card';
+import Contact from './components/contact/Contact';
 import Hero from './components/hero';
 import { Layout } from './components/layouts';
 import Quote from './components/quote/Quote';
+// import Contact from './contact/page';
 
 export default function Home() {
 	return (
@@ -62,6 +64,7 @@ export default function Home() {
 					</div>
 				</div>
 				<Quote height='' />
+				<Contact />
 			</Layout>
 		</main>
 	);

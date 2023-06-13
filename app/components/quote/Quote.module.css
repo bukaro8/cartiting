@@ -7,3 +7,6 @@
 .transparent {
 	background-color: rgba(190, 177, 177, 0.377);
 }
+.border {
+	border: 5px solid rgb(247, 104, 43);
+}

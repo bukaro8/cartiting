@@ -27,10 +27,12 @@ const Quote: FC<Props> = ({ height }) => {
 	const basePrice = 70;
 	const [carType, setCarType] = useState(0);
 	const [carName, setCarName] = useState('');
-	const [numWindows, setNumWindows] = useState(1);
+	const [numWindows, setNumWindows] = useState(0);
 	const [checked, setChecked] = useState(false);
 	const [show, setShow] = useState(false);
-
+	const [carNameWindow, setCarNameWindow] = useState('');
+	const [checkedWindow, setCheckedWindow] = useState(false);
+	const [showWindow, setShowWindow] = useState(false);
 	const result = Math.ceil(basePrice * carType * numWindows);
 	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setShow(false);
@@ -49,7 +51,6 @@ const Quote: FC<Props> = ({ height }) => {
 	) => {
 		e.preventDefault();
 		setShow(true);
-		console.log(carType);
 	};
 	const showing = () => {
 		return cars.map((car) => {
@@ -61,7 +62,7 @@ const Quote: FC<Props> = ({ height }) => {
 					<Image
 						src={car.image}
 						alt={car.name}
-						className='img-fluid'
+						className={`img-fluid   rounded ${styles.border} mb-1`}
 						width={150}
 						height={100}
 					/>
@@ -79,6 +80,18 @@ const Quote: FC<Props> = ({ height }) => {
 				</div>
 			);
 		});
+	};
+	const handleOnChangeWindows = (e: React.ChangeEvent<HTMLInputElement>) => {
+		e.preventDefault();
+		setShow(false);
+		setShowWindow(false);
+		setCheckedWindow(!checkedWindow);
+		setCarNameWindow(e.target.value);
+		e.target.value === 'back'
+			? setNumWindows(1)
+			: e.target.value === 'backSide'
+			? setNumWindows(1.3)
+			: e.target.value === 'backAll' && setNumWindows(1.6);
 	};
 	return (
 		<div
@@ -100,8 +113,60 @@ const Quote: FC<Props> = ({ height }) => {
 				</article>
 				<article
 					className={`left col-md-5 border border-primary  rounded ${styles.transparent}`}
+					style={{ minHeight: '100%' }}
 				>
 					<h3 className='h1 text-center text-light'>Number of Windows</h3>
+					<form
+						className='d-flex justify-content-around flex-column align-items-center btn-group'
+						role='group'
+						aria-label='Basic checkbox toggle button group'
+					>
+						<div className='my-4'>
+							<input
+								type='checkbox'
+								name='back'
+								className='btn-check'
+								value='back'
+								checked={carNameWindow === 'back'}
+								id='back'
+								onChange={(e) => handleOnChangeWindows(e)}
+								autoComplete='off'
+							/>
+							<label htmlFor='back' className='btn btn-outline-light'>
+								Rear Screen Only
+							</label>
+						</div>
+						<div className='mb-4'>
+							<input
+								type='checkbox'
+								name='backSide'
+								className='btn-check'
+								value='backSide'
+								checked={carNameWindow === 'backSide'}
+								id='backSide'
+								onChange={(e) => handleOnChangeWindows(e)}
+								autoComplete='off'
+							/>
+							<label htmlFor='backSide' className='btn btn-outline-light'>
+								All Rear Windows
+							</label>
+						</div>
+						<div>
+							<input
+								type='checkbox'
+								name='backAll'
+								className='btn-check'
+								value='backAll'
+								checked={carNameWindow === 'backAll'}
+								id='backAll'
+								onChange={(e) => handleOnChangeWindows(e)}
+								autoComplete='off'
+							/>
+							<label htmlFor='backAll' className='btn btn-outline-light'>
+								All Rear Windows and Front Windows
+							</label>
+						</div>
+					</form>
 				</article>
 			</section>
 			<button
