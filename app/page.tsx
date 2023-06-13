@@ -2,6 +2,7 @@
 import { ImageCard, TextCard } from './components/card';
 import Hero from './components/hero';
 import { Layout } from './components/layouts';
+import Quote from './components/quote/Quote';
 
 export default function Home() {
 	return (
@@ -60,6 +61,7 @@ export default function Home() {
 						/>
 					</div>
 				</div>
+				<Quote height='' />
 			</Layout>
 		</main>
 	);

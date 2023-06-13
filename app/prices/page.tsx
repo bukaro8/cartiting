@@ -5,7 +5,7 @@ import Quote from '../components/quote/Quote';
 const Prices = () => {
 	return (
 		<Layout title={'Prices'}>
-			<Quote />
+			<Quote height='100vh' />
 		</Layout>
 	);
 };
